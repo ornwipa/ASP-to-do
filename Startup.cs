@@ -65,7 +65,7 @@ namespace ASP_to_do
             /// <typeparam name="ITodoItemService">the service class that interact with database</typeparam>
             /// <typeparam name="TodoItemService">replace FakeTodoItemService</typeparam>
             /// <returns></returns>
-            // services.AddScoped<ITodoItemService, TodoItemService>();
+            services.AddScoped<ITodoItemService, TodoItemService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
