@@ -36,5 +36,22 @@ namespace AspNetCoreTodo.Controllers
             // Render view using the model            
             return View(model);
         }
+
+        [ValidateAntiForgeryToken] // telling ASP.NET Core to look for the hidden verification token, added to the form by the asp-action tag helper.
+        public async Task<IActionResult> AddItem(TodoItem newItem)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var successful = await _todoItemService.AddItemAsync(newItem);
+            if (!successful)
+            {
+                return BadRequest("Could not add item.");
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -1,0 +1,8 @@
+@model AspNetCoreTodo.Models.TodoItem
+<!--Passing it a new TodoItem via Html.PartialAsync initializes the form with an empty item.--> 
+
+<form asp-action="AddItem" method="POST">
+    <label asp-for="Title">Add a new item:</label>
+    <input asp-for="Title">
+    <button type="submit">Add</button>
+</form>

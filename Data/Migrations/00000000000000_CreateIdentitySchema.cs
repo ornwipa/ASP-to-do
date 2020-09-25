@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ASP_to_do.Data.Migrations
+namespace AspNetCoreTodo.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {
